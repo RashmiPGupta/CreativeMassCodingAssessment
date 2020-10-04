@@ -1,0 +1,36 @@
+<template>
+    
+    <template if:true={myAccount.data}>
+               
+        <h1>
+            {name}
+        </h1>
+        <template if:true={street}>
+            <template if:true={city}>
+                <h2>
+                    {city}
+                </h2>            
+            </template>
+        </template>
+        <template if:false={street}>           
+            <template if:false={city}>
+                <h2>
+                        None Specified
+                </h2>
+            </template>
+        </template>           
+        <template if:true={street}>
+            <template if:true={city}>
+                <p>Reviewing details for account in city <b>{city}</b></p>
+            </template>
+        </template>
+           
+        <template if:false={street}>           
+            <template if:false={city}>        
+                <p>Reviewing details for account in city <b> None Specified </b></p>
+            </template>
+        </template>
+            
+    </template>
+        
+</template>
